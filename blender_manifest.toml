@@ -1,0 +1,19 @@
+schema_version = "1.0.0"
+
+id = "tsfreddie_acos"
+version = "1.0.0"
+name = "Active Collection on Save"
+tagline = "Automatically change the active collection when saving"
+maintainer = "TsFreddie"
+type = "add-on"
+
+website = "https://github.com/TsFreddie/blender-acos"
+
+tags = ["Scene", "Game Engine", "Pipeline"]
+
+blender_version_min = "4.3.0"
+
+license = ["SPDX:GPL-3.0-or-later"]
+
+[build]
+paths_exclude_pattern = ["__pycache__/", "/images/", "/.git/", "/*.zip", ".gitignore"]

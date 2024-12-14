@@ -45,7 +45,10 @@ def on_save_post(dummy):
         set_active_collection_by_name_recursive(collection_name, root_layer_collection, context)
 
 @bpy.app.handlers.persistent
-def load_post(dummy):
+def on_load_post(filepath):
+    if bpy.app.background or not filepath:
+        return
+
     context = bpy.context
     collection_name = context.scene.acos_previous_active_collection
     root_layer_collection = context.view_layer.layer_collection
@@ -107,7 +110,7 @@ def register():
     
     bpy.app.handlers.save_pre.append(on_save_pre)
     bpy.app.handlers.save_post.append(on_save_post)
-    bpy.app.handlers.load_post.append(load_post)
+    bpy.app.handlers.load_post.append(on_load_post)
 
 def unregister():
     bpy.utils.unregister_class(SetSavingCollection)
@@ -119,7 +122,7 @@ def unregister():
     
     bpy.app.handlers.save_pre.remove(on_save_pre)
     bpy.app.handlers.save_post.remove(on_save_post)
-    bpy.app.handlers.load_post.remove(load_post)
+    bpy.app.handlers.load_post.remove(on_load_post)
 
 if __name__ == "__main__":
     register()

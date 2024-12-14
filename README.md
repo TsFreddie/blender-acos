@@ -1,5 +1,7 @@
 # Blender Addon - Active Collection on Save
 
+![Icon](images/icon.png)
+
 This is a really simple addon to automatically change the active collection when saving a file. I made this for working with [Godot Engine](https://godotengine.org/).
 
 ## Why do I need this?
