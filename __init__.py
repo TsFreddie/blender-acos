@@ -1,6 +1,6 @@
 bl_info = {
     "name": "Change Active Collection on Save",
-    "blender": (4, 3, 0),
+    "blender": (4, 2, 3),
     "category": "Object",
 }
 
